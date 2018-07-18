@@ -27,7 +27,9 @@ public class Solution {
         pets.add(dog);
 
         StringWriter writer = new StringWriter();
+
         convertToJSON(writer, pets);
+
         System.out.println(writer.toString());
         //[{"name":"Murka","age":5,"weight":3},{"name":"Killer","age":8,"owner":"Bill Jeferson"}]
     }
@@ -39,16 +41,16 @@ public class Solution {
 
     @JsonAutoDetect
     public static class Pet {
-        String name;
+        public String name;
     }
     @JsonAutoDetect
     public static class Cat extends Pet {
-        int age;
-        int weight;
+        public int age;
+        public int weight;
     }
     @JsonAutoDetect
     public static class Dog extends Pet {
-        int age;
-        String owner;
+        public int age;
+        public String owner;
     }
 }
